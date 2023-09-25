@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Basket {
     private HashMap<Product, Integer> products;
@@ -20,9 +21,10 @@ public class Basket {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(Product product: products.keySet()){
+        for(Map.Entry<Product, Integer> entry : products.entrySet()){
+            Product product = entry.getKey();
             stringBuilder.append(product);
-            stringBuilder.append(" - ").append(products.get(product));
+            stringBuilder.append(" - ").append(entry.getValue());
             stringBuilder.append("\n");
         }
 
