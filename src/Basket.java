@@ -1,11 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Basket {
-    private HashMap<Product, Integer> products;
+    private TreeMap<Product, Integer> products;
 
     public Basket() {
-        this.products = new HashMap<>();
+        this.products = new TreeMap<>(new ProductComparator());
     }
 
     public void add(Product product, int count){
